@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC3mlZMBlf5qG8craONlMbiSjJmwLhobB0",
-  authDomain: "fir-secend-try.firebaseapp.com",
-  projectId: "fir-secend-try",
-  storageBucket: "fir-secend-try.appspot.com",
-  messagingSenderId: "344156963591",
-  appId: "1:344156963591:web:13b7333a499a79b82cbba2"
+  apiKey: "AIzaSyBcYok4DSbKGDt-1TU429RrJ9950zgdGHI",
+  authDomain: "astrovel-client-site.firebaseapp.com",
+  projectId: "astrovel-client-site",
+  storageBucket: "astrovel-client-site.appspot.com",
+  messagingSenderId: "110932356462",
+  appId: "1:110932356462:web:92eb437f3196071ad0a57f"
 };
 
 // Initialize Firebase

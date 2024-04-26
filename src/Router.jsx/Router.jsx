@@ -6,6 +6,7 @@ import Home from '../components/Home/Home';
 import AddTouristsSpot from '../components/AddTouristsSpot/AddTouristsSpot';
 import MyList from '../components/MyList/MyList';
 import Login from '../components/Login/Login';
+import Register from '../components/Register/Register';
 export const router = createBrowserRouter([
    {
     path:'/',
@@ -31,6 +32,10 @@ export const router = createBrowserRouter([
         {
             path:'/login',
             element:<Login></Login>
+        },
+        {
+            path:'/register',
+            element:<Register></Register>
         }
     ]
    }

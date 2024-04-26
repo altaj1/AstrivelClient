@@ -1,7 +1,7 @@
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import { auth } from "../../firebase.confi";
-import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth/cordova";
+import { GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 
 /* eslint-disable react/prop-types */
 export const AuthContext = createContext(null);
@@ -9,7 +9,7 @@ const provider = new GoogleAuthProvider();
  const githubProvider = new GithubAuthProvider();
 
 const AuthProvider = ({children}) => {
-    console.log(children)
+    
        
     const [user, setUser] = useState(null);
  
