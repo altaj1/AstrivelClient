@@ -6,7 +6,7 @@ import { CgProfile } from "react-icons/cg";
 
 const Navbar = () => {
   const { user, userLogOut, setUser } = useContext(AuthContext);
-  console.log(name);
+  // console.log(name);
   const listItems = (
     <div className=" lg:flex  items-center gap-7">
       <div className="flex  md:flex-row md:gap-6 flex-col lg:flex-row lg:gap-7 lg:space-y-0 space-y-4 ">
@@ -50,11 +50,12 @@ const Navbar = () => {
       </div>
     </div>
   );
-  // useEffect(()=>{
-  //   if(user){
-  //     setUser(user)
-  //   }
-  // },[user])
+  console.log(user)
+  useEffect(()=>{
+    if(user){
+      setUser(user)
+    }
+  },[user])
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
