@@ -39,7 +39,7 @@ const UpdateSpot = () => {
         const addTouristsSpot = {countryName, spotName, photo, cost, visitors, description, seasonality,
             location, travelTime, displayName, email,  photoURL}
             // console.log(addTouristsSpot)
-            fetch("http://localhost:4000/add-tourists",{
+            fetch(" http://localhost:4000//add-tourists",{
                 method: 'POST',
                 headers:{'Content-Type': 'application/json'},
                 body:JSON.stringify(addTouristsSpot)

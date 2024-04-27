@@ -1,0 +1,39 @@
+[
+    {
+      "countryName": "Bangladesh",
+      "flag": "https://i.ibb.co/Brwr6T3/BGD.png",
+      "description": "Bangladesh, officially the People's Republic of Bangladesh, is a country in South Asia.",
+      "zones": ["Asia"]
+    },
+    {
+      "countryName": "Thailand",
+      "flag": "https://i.ibb.co/pwRDHHx/Thailand.jpg",
+      "description": "Thailand, officially the Kingdom of Thailand, is a country in Southeast Asia.",
+      "zones": ["Asia"]
+    },
+    {
+      "countryName": "Indonesia",
+      "flag": "https://i.ibb.co/sK8sXS5/Indonesia.jpg",
+      "description": "Indonesia, officially the Republic of Indonesia, is a country in Southeast Asia and Oceania.",
+      "zones": ["Asia", "Oceania"]
+    },
+    {
+      "countryName": "Malaysia",
+      "flag": "https://i.ibb.co/mBhgkN2/Malaysia.jpg",
+      "description": "Malaysia is a country in Southeast Asia.",
+      "zones": ["Asia"]
+    },
+    {
+      "countryName": "Vietnam",
+      "flag": "https://i.ibb.co/4gWF5Pg/Vietnam.jpg",
+      "description": "Vietnam, officially the Socialist Republic of Vietnam, is a country in Southeast Asia.",
+      "zones": ["Asia"]
+    },
+    {
+      "countryName": "Cambodia",
+      "flag": "https://i.ibb.co/kDYyVjn/Cambodia.jpg",
+      "description": "Cambodia, officially known as the Kingdom of Cambodia, is a country located in the southern portion of the Indochinese peninsula in Southeast Asia.",
+      "zones": ["Asia"]
+    }
+  ]
+  

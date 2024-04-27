@@ -30,8 +30,14 @@ const MyList = () => {
           </tr>
         </thead>
         <tbody>
-        {spots.map((spot, idx) => (
-          <MyListcard key={idx} spot={spot} idx={idx}></MyListcard>
+        {spots.map((spot, idx, ) => (
+          <MyListcard 
+          spots={spots}
+          key={idx} 
+          spot={spot} 
+          idx={idx}
+          setSpots={setSpots}
+          ></MyListcard>
         ))}
         </tbody>
        

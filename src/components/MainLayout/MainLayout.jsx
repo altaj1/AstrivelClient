@@ -8,7 +8,7 @@ const MainLayout = () => {
     const [darkMode, setDarkMode] = useState(false);
     return (
         <div >
-           <div className=" lg:h-24"> 
+           <div className=" lg:h-16"> 
            <Navbar setDarkMode={setDarkMode} darkMode={darkMode}></Navbar>
            </div>
            
