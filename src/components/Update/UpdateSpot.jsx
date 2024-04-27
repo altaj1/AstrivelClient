@@ -2,6 +2,7 @@ import { useContext, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { toast } from "react-toastify";
 import { AuthContext } from "../Authprovider/AuthProvider";
+import { useParams } from "react-router-dom";
 
 
 const UpdateSpot = () => {
@@ -12,8 +13,9 @@ const UpdateSpot = () => {
     const displayName = user?.displayName;
     const email = user?.email;
     const photoURL = user?.photoURL;
-    const notify = () => toast("Congratulations Added Successfully!!");
-
+    const notify = () => toast("Congratulations Update Successfully!!");
+    const paramsID= useParams();
+    console.log(paramsID.id)
     const handelSubmitt = (e)=>{
         e.preventDefault()
         
@@ -39,15 +41,15 @@ const UpdateSpot = () => {
         const addTouristsSpot = {countryName, spotName, photo, cost, visitors, description, seasonality,
             location, travelTime, displayName, email,  photoURL}
             // console.log(addTouristsSpot)
-            fetch(" http://localhost:4000//add-tourists",{
-                method: 'POST',
+            fetch(`http://localhost:4000/update/${paramsID.id}`,{
+                method: 'Put',
                 headers:{'Content-Type': 'application/json'},
                 body:JSON.stringify(addTouristsSpot)
             })
             .then(res=>res.json())
             .then(res=>{
                 console.log(res)
-                if (res.acknowledged) {
+                if (res.modifiedCount > 0) {
                     notify()
                 }
             })

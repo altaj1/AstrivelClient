@@ -59,7 +59,7 @@ const Navbar = ({ setDarkMode, darkMode }) => {
   },[user])
   // console.log(darkMode)
   return (
-    <div className="navbar shadow-md top-0  z-50 py-4 bg-base-100  fixed">
+    <div className="navbar shadow-md top-0  z-50  bg-base-100  fixed">
       <div className="navbar-start">
         <div className="dropdown">
           <div

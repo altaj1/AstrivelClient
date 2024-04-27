@@ -8,6 +8,7 @@ import MyList from '../components/MyList/MyList';
 import Login from '../components/Login/Login';
 import Register from '../components/Register/Register';
 import ViewDetails from '../components/ViewDetails/ViewDetails';
+import UpdateSpot from '../components/Update/UpdateSpot';
 export const router = createBrowserRouter([
    {
     path:'/',
@@ -44,6 +45,11 @@ export const router = createBrowserRouter([
             path:"/view-deatils/:id",
             loader:({params})=>fetch(`http://localhost:4000/view-deatils/${params.id}`),
             element:<ViewDetails></ViewDetails>
+        },
+        {
+            path:'/update/:id',
+            element:<UpdateSpot></UpdateSpot>,
+            
         }
     ]
    }

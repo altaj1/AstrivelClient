@@ -26,7 +26,7 @@ const MyListcard = ({spot, idx, spots, setSpots}) => {
                     if (data.deletedCount > 0) {
                         Swal.fire(
                             'Deleted!',
-                            'Your Coffee has been deleted.',
+                            'Your Tourist Spot Has Been Deleted.',
                             'success'
                         )
                         const remaining = spots.filter(spot => spot._id !== _id);
@@ -47,7 +47,7 @@ const MyListcard = ({spot, idx, spots, setSpots}) => {
               <td>{spotName}</td>
               <td>{visitors}</td>
               <td>{cost}$</td>
-              <td><Link to='/update' className="btn">Update</Link></td>
+              <td><Link to={`/update/${_id}`} className="btn">Update</Link></td>
               <td><button onClick={()=>handeleDelete(_id)}  className="btn bg-red-300">Delete</button></td>
               
             </tr>
