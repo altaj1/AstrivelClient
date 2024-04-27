@@ -3,8 +3,9 @@ import { TbLayoutNavbarExpand } from "react-icons/tb";
 import { useContext, useEffect } from "react";
 import { AuthContext } from "../Authprovider/AuthProvider";
 import { CgProfile } from "react-icons/cg";
-
-const Navbar = () => {
+import { MdDarkMode } from "react-icons/md";
+import { MdOutlineDarkMode } from "react-icons/md";
+const Navbar = ({ setDarkMode, darkMode }) => {
   const { user, userLogOut, setUser } = useContext(AuthContext);
   // console.log(name);
   const listItems = (
@@ -50,14 +51,15 @@ const Navbar = () => {
       </div>
     </div>
   );
-  console.log(user)
+  // console.log(user)
   useEffect(()=>{
     if(user){
       setUser(user)
     }
   },[user])
+  // console.log(darkMode)
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar shadow-md top-0  z-50 py-4 bg-base-100  fixed">
       <div className="navbar-start">
         <div className="dropdown">
           <div
@@ -80,7 +82,7 @@ const Navbar = () => {
             src="https://i.ibb.co/kHRLsmw/astro-home-1-removebg-preview-1.png"
             alt=""
           />
-          <h1 className="text-2xl font-bold">Astrovel</h1>
+          <h1 className="text-2xl font-bold lg:block hidden">Astrovel</h1>
         </div>
       </div>
       <div className="navbar-center">
@@ -148,6 +150,19 @@ const Navbar = () => {
             </NavLink>
           )}
         </div>
+
+      {/* dark mood button */}
+      <div className=" m-0 ">
+            <button
+              onClick={() => setDarkMode(!darkMode)}
+              className=" p-1 mr-3 flex items-center text-4xl"
+            >
+              {
+                darkMode? <MdOutlineDarkMode />:  <MdDarkMode />
+              }
+            </button>
+          </div>
+
       </div>
     </div>
   );
