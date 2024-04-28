@@ -17,11 +17,12 @@ export const router = createBrowserRouter([
    {
     path:'/',
     element:<MainLayout></MainLayout>,
+    errorElement:<ErrorPages></ErrorPages>,
     children:[
         {
             path:'/',
             element:<Home></Home>,
-            errorElement:<ErrorPages></ErrorPages>,
+           
             loader:()=>fetch("http://localhost:4000/all-torists"),
 
         },
