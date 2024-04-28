@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
         },
         {
             path:'/my-list',
-            element:<MyList></MyList>
+            element:<PrivetRout><MyList></MyList></PrivetRout>
         },
         {
             path:'/login',
