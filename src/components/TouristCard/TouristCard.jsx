@@ -1,10 +1,12 @@
 /* eslint-disable react/prop-types */
 
+import { Link } from "react-router-dom";
+
 
 const TouristCard = ({spot}) => {
-    console.log(spot)
+
     const {countryName, spotName, photo, cost, visitors, description, seasonality,
-        location, travelTime} =spot;
+        location, travelTime, _id} =spot;
   return (
     <div className="card card-compact lg:w-96  shadow-xl">
       <figure>
@@ -28,7 +30,7 @@ const TouristCard = ({spot}) => {
         
         <div className="card-actions justify-end">
           
-          <button className="btn   hover:bg-slate-500 ">View Details</button>
+        <Link to={`/view-deatils/${_id}`} className="btn   hover:bg-slate-500 ">View Details</Link>
         </div>
       </div>
     </div>

@@ -56,7 +56,7 @@ const AddTouristsSpot = () => {
       photoURL,
     };
     // console.log(addTouristsSpot)
-    fetch(`http://localhost:4000/update/:`, {
+    fetch(`http://localhost:4000/add-tourists`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(addTouristsSpot),
@@ -66,6 +66,7 @@ const AddTouristsSpot = () => {
         console.log(res);
         if (res.acknowledged) {
           notify();
+          form.reset()
         }
       });
   };

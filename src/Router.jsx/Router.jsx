@@ -10,6 +10,8 @@ import Register from '../components/Register/Register';
 import ViewDetails from '../components/ViewDetails/ViewDetails';
 import UpdateSpot from '../components/Update/UpdateSpot';
 import PrivetRout from '../components/privetRout/PrivetRout';
+import CountriDeatile from '../components/Home/CountriDeatile/CountriDeatile';
+
 export const router = createBrowserRouter([
    {
     path:'/',
@@ -52,6 +54,11 @@ export const router = createBrowserRouter([
             loader: ({params})=>fetch(`http://localhost:4000/view-deatils/${params.id}`),
             element:<UpdateSpot></UpdateSpot>,
             
+        },
+        {
+            path:"/countri-deatiel/:countri",
+            loader:({params})=>fetch(`http://localhost:4000/country/${params.countri}`),
+            element: <CountriDeatile></CountriDeatile>
         }
     ]
    }
