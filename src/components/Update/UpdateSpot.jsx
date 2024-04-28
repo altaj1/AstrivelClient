@@ -2,20 +2,27 @@ import { useContext, useEffect } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { toast } from "react-toastify";
 import { AuthContext } from "../Authprovider/AuthProvider";
-import { useParams } from "react-router-dom";
+import { useLoaderData, useParams } from "react-router-dom";
 
 
 const UpdateSpot = () => {
 
 
+    const spot = useLoaderData();
+    console.log(spot)
+
     const {user, setUser} = useContext(AuthContext);
     // const {displayName, email,  photoURL } = user;
+
     const displayName = user?.displayName;
     const email = user?.email;
     const photoURL = user?.photoURL;
     const notify = () => toast("Congratulations Update Successfully!!");
     const paramsID= useParams();
-    console.log(paramsID.id)
+   
+    const {countryName, spotName, photo, cost, visitors, description, seasonality,
+      location, travelTime, _id} =spot;
+
     const handelSubmitt = (e)=>{
         e.preventDefault()
         

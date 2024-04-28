@@ -9,6 +9,7 @@ import Login from '../components/Login/Login';
 import Register from '../components/Register/Register';
 import ViewDetails from '../components/ViewDetails/ViewDetails';
 import UpdateSpot from '../components/Update/UpdateSpot';
+import PrivetRout from '../components/privetRout/PrivetRout';
 export const router = createBrowserRouter([
    {
     path:'/',
@@ -27,7 +28,7 @@ export const router = createBrowserRouter([
         },
         {
             path:'/add-tourists',
-            element:<AddTouristsSpot></AddTouristsSpot>
+            element:<PrivetRout><AddTouristsSpot></AddTouristsSpot></PrivetRout>
         },
         {
             path:'/my-list',
@@ -48,6 +49,7 @@ export const router = createBrowserRouter([
         },
         {
             path:'/update/:id',
+            loader: ({params})=>fetch(`http://localhost:4000/view-deatils/${params.id}`),
             element:<UpdateSpot></UpdateSpot>,
             
         }
