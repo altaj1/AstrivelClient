@@ -5,6 +5,7 @@ import HomeCard from "./HomeCard/HomeCard";
 import { useEffect, useState } from "react";
 import CountryCard from "./CountryCard/CountryCard";
 import { Typewriter } from "react-simple-typewriter";
+import CustomersSay from "../CustomersSay/CustomersSay";
 
 const Home = () => {
     const [countries, setCountries] = useState([])
@@ -62,9 +63,14 @@ const Home = () => {
         }
         </div>
         </div>
+        <div>
+           {
+            <CustomersSay></CustomersSay>
+           }
+           </div>
         </div>
 
-
+          
         </div>
     );
 };

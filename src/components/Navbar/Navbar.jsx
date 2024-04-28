@@ -59,8 +59,8 @@ const Navbar = ({ setDarkMode, darkMode }) => {
   },[user])
   // console.log(darkMode)
   return (
-    <div className="navbar shadow-md top-0  z-50  bg-base-100  fixed">
-      <div className="navbar-start">
+    <div className="navbar shadow-md top-0  z-50  bg-base-100 lg:pl-72 lg:pr-72  fixed">
+      <div className="navbar-start lg:pl-14">
         <div className="dropdown">
           <div
             tabIndex={0}
@@ -92,23 +92,11 @@ const Navbar = ({ setDarkMode, darkMode }) => {
       </div>
 
       <div className="navbar-end space-x-3">
-        {/* <div
-          className="hover:tooltip tooltip-primary tooltip-open tooltip-bottom"
-          data-tip={user?.displayName}
-        >
-          <Link to="/profile">
-            
-            <img
-              className="h-14 rounded-full"
-              src={user ? user.photoURL : <CgProfile className="text-5xl" />}
-              alt=""
-            />
-          </Link>
-        </div> */}
+       
 
-        <div className="dropdown dropdown-hover">
+        <div className="dropdown dropdown-hover drop-shadow-none">
           <div tabIndex={0} role="button" className=" m-1">
-          <Link to="/profile">
+          <Link >
             
             <img
               className="h-14 rounded-full"
@@ -125,7 +113,7 @@ const Navbar = ({ setDarkMode, darkMode }) => {
               <a>{user?.displayName}</a>
             </li>
             <li>
-              <a><button  onClick={() => userLogOut()} className="btn btn-success w-full">
+              <a><button  onClick={() => userLogOut()} className="btn  w-full">
             Logout
           </button></a>
             </li>

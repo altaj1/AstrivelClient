@@ -1,29 +1,34 @@
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
 import { AuthContext } from "../Authprovider/AuthProvider";
 import { toast } from "react-toastify";
-// import Select from 'react-select'
-// import { Select, Option } from "@material-tailwind/react";
+
+import Select from 'react-select'
+
 
 const AddTouristsSpot = () => {
   const { user, setUser } = useContext(AuthContext);
-  // const {displayName, email,  photoURL } = user;
+  const [country, setcountry] = useState(null);
   const displayName = user?.displayName;
   const email = user?.email;
   const photoURL = user?.photoURL;
   const notify = () => toast("Congratulations Added Successfully!!");
 
-  // const options = [
-  //   { value: 'chocolate', label: 'Chocolate' },
-  //   { value: 'strawberry', label: 'Strawberry' },
-  //   { value: 'vanilla', label: 'Vanilla' }
-  // ]
-
+  const options = [
+    { value: 'Bangladesh', label: 'Bangladesh' },
+    { value: 'Thailand', label: 'Thailand' },
+    { value: 'Indonesia', label: 'Indonesia' },
+    { value: 'Malaysia', label: ' Malaysia' },
+    { value: 'Vietnam', label: 'Vietnam' },
+    { value: 'Cambodia', label: 'Cambodia' },
+  ]
+  // const countryName = country.value;
+  // console.log(countryName)
   const handelSubmitt = (e) => {
     e.preventDefault();
 
     const form = e.target;
-    const countryName = form.countryName.value;
+    
 
     const spotName = form.spotName.value;
 
@@ -40,9 +45,10 @@ const AddTouristsSpot = () => {
     const location = form.location.value;
 
     const travelTime = form.travel_time.value;
-
+   
+   
     const addTouristsSpot = {
-      countryName,
+      countryName:country.value,
       spotName,
       photo,
       cost,
@@ -70,16 +76,25 @@ const AddTouristsSpot = () => {
         }
       });
   };
-  console.log(user);
-  useEffect(() => {
-    if (user) {
-      setUser(user);
-    }
-  }, [user]);
+  // console.log(user);
+  // useEffect(() => {
+  //   if (user) {
+  //     setUser(user);
+  //   }
+  // }, [user]);
+  // console.log(countryName)
   return (
     <div>
-      <div className="text-center">
-        <h1 className="text-4xl font-bold opacity-85">Add Tourists Spot</h1>
+      <div className="text-center pt-16">
+        <h1 className="text-4xl font-bold opacity-85">
+        <Typewriter
+                  delaySpeed={500}
+                  deleteSpeed={10}
+                  loop={1}
+                  typeSpeed={200}
+                  words={[" Add Tourists Spot...!"]}
+                />
+         </h1>
       </div>
       <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
         <form
@@ -88,8 +103,8 @@ const AddTouristsSpot = () => {
         >
           <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
             <div className="space-y-2 col-span-full lg:col-span-1">
-              <p className="font-medium">
-                {" "}
+              <p className="font-medium text-2xl ">
+                
                 <Typewriter
                   delaySpeed={500}
                   deleteSpeed={10}
@@ -99,21 +114,27 @@ const AddTouristsSpot = () => {
                 />
               </p>
               <p className="text-xs">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Adipisci fuga autem eum!
+              Immerse yourself in thrilling adventures, from scenic hikes to water sports, ensuring an unforgettable experience for every traveler.
               </p>
             </div>
             <div className="grid grid-cols-6 space-x-5 gap-y-12 font-semibold gap-4 col-span-full lg:col-span-3">
               <div className="col-span-full sm:col-span-3">
                 <label className="text-sm">Country Name</label>
-                <input
+                {/* <input
                   id="firstname"
                   name="countryName"
                   type="text"
                   placeholder="  Country Name"
                   className="w-full rounded-md text-black   focus:outline-none"
-                />
-
+                /> */}
+                 <div className=" outline-none" >
+                 <Select  
+                 
+        defaultValue={country}
+        onChange={setcountry}
+        options={options}
+      />
+                 </div>
                 <hr />
               </div>
               <div className="col-span-full sm:col-span-3 ">

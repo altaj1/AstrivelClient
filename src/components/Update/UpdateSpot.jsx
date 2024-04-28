@@ -18,7 +18,7 @@ const UpdateSpot = () => {
     const email = user?.email;
     const photoURL = user?.photoURL;
     const notify = () => toast("Congratulations Update Successfully!!");
-    const paramsID= useParams();
+    
    
     const {countryName, spotName, photo, cost, visitors, description, seasonality,
       location, travelTime, _id} =spot;
@@ -48,7 +48,7 @@ const UpdateSpot = () => {
         const addTouristsSpot = {countryName, spotName, photo, cost, visitors, description, seasonality,
             location, travelTime, displayName, email,  photoURL}
             // console.log(addTouristsSpot)
-            fetch(`http://localhost:4000/update/${paramsID.id}`,{
+            fetch(`http://localhost:4000/update/${_id}`,{
                 method: 'Put',
                 headers:{'Content-Type': 'application/json'},
                 body:JSON.stringify(addTouristsSpot)
@@ -72,7 +72,15 @@ const UpdateSpot = () => {
     return (
         <div>
         <div className="text-center">
-            <h1 className="text-4xl font-bold opacity-85">Update Tourists Spot</h1>
+            <h1 className="text-4xl font-bold opacity-85">
+            <Typewriter
+                  delaySpeed={500}
+                  deleteSpeed={10}
+                  loop={1}
+                  typeSpeed={200}
+                  words={["  Update Tourists Spot...!"]}
+                />
+             </h1>
         </div>
       <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
         <form
@@ -91,8 +99,7 @@ const UpdateSpot = () => {
                 ]}
               /></p>
               <p className="text-xs">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Adipisci fuga autem eum!
+              Stay informed with real-time notifications on events, weather, and special offers, ensuring you never miss out on the latest happenings during your travels.
               </p>
             </div>
             <div className="grid grid-cols-6 space-x-5 gap-y-12 font-semibold gap-4 col-span-full lg:col-span-3">
@@ -101,6 +108,9 @@ const UpdateSpot = () => {
                   Country Name
                 </label>
                 <input
+                defaultValue={countryName}
+                readOnly
+                disabled
                   id="firstname"
                   name="countryName"
                   type="text"
@@ -114,6 +124,9 @@ const UpdateSpot = () => {
                 Tourists Spot Name
                 </label>
                 <input
+                defaultValue={spotName}
+                disabled
+                readOnly
                   name="spotName"
                   id="lastname"
                   type="text"
@@ -128,7 +141,9 @@ const UpdateSpot = () => {
                 </label>
                 <input
                   name="photo"
-                  
+                  defaultValue={photo}
+                disabled
+                readOnly
                   type="url"
                   placeholder="     Photo ( Use Photo URL)"
                   className="w-full rounded-md text-black  focus:outline-none"
@@ -141,7 +156,9 @@ const UpdateSpot = () => {
                 </label>
                 <input
                   name="cost"
-                  
+                  defaultValue={cost}
+                disabled
+                readOnly
                   type="number"
                   placeholder="    Average Cost"
                   className="w-full rounded-md text-black  focus:outline-none"
@@ -154,7 +171,9 @@ const UpdateSpot = () => {
                 </label>
                 <input
                   name="visitors"
-                  
+                  defaultValue={visitors}
+                disabled
+                readOnly
                   type="text"
                   placeholder="     Tota Visitors Per Year"
                   className="w-full rounded-md text-black  focus:outline-none"
@@ -167,7 +186,9 @@ const UpdateSpot = () => {
                 </label>
                 <input
                   name="description"
-                  
+                  defaultValue={description}
+                disabled
+                readOnly
                   type="text"
                   placeholder="    Description"
                   className="w-full rounded-md  text-black focus:outline-none"
@@ -183,6 +204,9 @@ const UpdateSpot = () => {
                 </label>
                 <input
                  name="seasonality"
+                 defaultValue={seasonality}
+                disabled
+                readOnly
                   type="text"
                   placeholder="    Seasonality "
                   className="w-full rounded-md text-black   focus:outline-none"
@@ -194,6 +218,9 @@ const UpdateSpot = () => {
                   Location
                 </label>
                 <input
+                defaultValue={location}
+                disabled
+                readOnly
                   name="location"
                   id=""
                   type="text"
@@ -207,6 +234,9 @@ const UpdateSpot = () => {
                 Travel Time
                 </label>
                 <input
+                defaultValue={travelTime}
+                disabled
+                readOnly
                  name="travel_time"
                   type="text"
                   placeholder="    Travel Time"

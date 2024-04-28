@@ -1,10 +1,15 @@
-/* eslint-disable react/prop-types */
+
+
 import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
-const MyListcard = ({spot, idx, spots, setSpots}) => {
+
+const MyListcard = ({spot, idx, spots, setSpots }) => {
+    
     const {countryName, spotName, photo, cost, visitors, description, seasonality,
-        location, travelTime, _id} =spot;
+        location, travelTime, _id} =spot || {};
+
+        console.log(countryName, " this is countri name")
     const handeleDelete = (_id)=>{
         Swal.fire({
             title: 'Are you sure?',
@@ -38,9 +43,7 @@ const MyListcard = ({spot, idx, spots, setSpots}) => {
     }
         
     return (
-        
-          
-           
+
             <tr>
               <th>{idx +1}</th>
               <td>{countryName}</td>

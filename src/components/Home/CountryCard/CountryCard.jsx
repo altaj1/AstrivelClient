@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
-
+import { Fade, Slide } from "react-awesome-reveal";
 
 const CountryCard = ({countri}) => {
     const {countryName, description, flag} = countri;
     return (
+      
+      <Slide>
       <Link to={`/countri-deatiel/${countryName}`}>
         <div className="card card-compact lg:w-96  shadow-xl">
         <figure>
@@ -29,6 +31,7 @@ const CountryCard = ({countri}) => {
         </div>
       </div>
       </Link>
+    </Slide>
     );
 };
 

@@ -50,12 +50,12 @@ export const router = createBrowserRouter([
         {
             path:"/view-deatils/:id",
             loader:({params})=>fetch(`http://localhost:4000/view-deatils/${params.id}`),
-            element:<ViewDetails></ViewDetails>
+            element:<PrivetRout><ViewDetails></ViewDetails></PrivetRout>
         },
         {
             path:'/update/:id',
             loader: ({params})=>fetch(`http://localhost:4000/view-deatils/${params.id}`),
-            element:<UpdateSpot></UpdateSpot>,
+            element:<PrivetRout><UpdateSpot></UpdateSpot></PrivetRout>,
             
         },
         {

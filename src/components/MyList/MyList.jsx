@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Authprovider/AuthProvider";
 import MyListcard from "./MyListcard";
+import { Typewriter } from "react-simple-typewriter";
 
 const MyList = () => {
   const [spots, setSpots] = useState([]);
@@ -12,9 +13,19 @@ const MyList = () => {
       .then((data) => {
         setSpots(data);
       });
-  }, [user]);
+  }, []);
   return (
-    <div className="overflow-x-auto">
+   <div className="text-center p-14"> 
+     <h1 className="text-4xl font-bold opacity-85">
+            <Typewriter
+                  delaySpeed={500}
+                  deleteSpeed={10}
+                  loop={1}
+                  typeSpeed={200}
+                  words={["  Update Tourists Spot...!"]}
+                />
+             </h1>
+     <div className="overflow-x-auto pb-14">
       <table className="table">
         <thead>
           <tr>
@@ -43,6 +54,7 @@ const MyList = () => {
        
       </table>
     </div>
+   </div>
   );
 };
 
