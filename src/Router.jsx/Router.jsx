@@ -11,6 +11,7 @@ import ViewDetails from '../components/ViewDetails/ViewDetails';
 import UpdateSpot from '../components/Update/UpdateSpot';
 import PrivetRout from '../components/privetRout/PrivetRout';
 import CountriDeatile from '../components/Home/CountriDeatile/CountriDeatile';
+import ErrorPages from '../components/ErrorPages/ErrorPages';
 
 export const router = createBrowserRouter([
    {
@@ -20,6 +21,7 @@ export const router = createBrowserRouter([
         {
             path:'/',
             element:<Home></Home>,
+            errorElement:<ErrorPages></ErrorPages>,
             loader:()=>fetch("http://localhost:4000/all-torists"),
 
         },

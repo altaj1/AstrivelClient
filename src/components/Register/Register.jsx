@@ -4,6 +4,7 @@ import { AuthContext } from "../Authprovider/AuthProvider";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet";
 import { LiaEyeSlashSolid, LiaEyeSolid } from "react-icons/lia";
+import { Typewriter } from "react-simple-typewriter";
 
 const Register = () => {
 
@@ -75,11 +76,29 @@ const Register = () => {
         <div className="hero-content flex-col lg:flex-row-reverse">
           <div className="text-center h-52 items-center rounded-lg shadow-lg justify-center p-20 hover:bg-purple-500 flex flex-col  lg:text-left bg-purple-600 text-white opacity-85">
             <h1 className="font-bold  text-2xl animate__animated animate__backInDown">
-              WELCOME
+              
+              <Typewriter
+                delaySpeed={500}
+                deleteSpeed={10}
+                loop={1}
+                typeSpeed={200}
+                words={[
+                    "WELCOME...!",
+                ]}
+              />
             </h1>
             <hr />
             <p className="animate__animated animate__backInLeft">
-              Create Accound to Access Dashbord
+              
+              <Typewriter
+                delaySpeed={500}
+                deleteSpeed={10}
+                loop={1}
+                typeSpeed={200}
+                words={[
+                    " Create Accound to Access Dashbord...!",
+                ]}
+              />
             </p>
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -125,42 +144,40 @@ const Register = () => {
               </div>
 
               <div className="form-control">
-                <div className="flex items-center">
-                  <div>
-                    <label className="label">
-                      <span className="label-text">Password</span>
-                    </label>
-                    <input
-                      type={showPass ? "text" : "password"}
-                      placeholder="password..."
-                      name="password"
-                      className="input   text-start"
-                      required
-                      autoComplete="current-password"
-                    />
-                    <label className="label"></label>
-                    <hr />
-                  </div>
-                  <div
-                    onClick={handelShowPass}
-                    type="submit"
+              <div className="flex items-center">
+                <div>
+                  <label className="label">
+                    <span className="label-text">Password</span>
+                  </label>
+                  <input
+                    type={showPass ? "text" : "password"}
+                    placeholder="password..."
                     name="password"
-                    className=" 
-              mt-5 ml-48 absolute "
-                  >
-                    {showPass ? (
-                      <LiaEyeSolid className="text-xl opacity-80" />
-                    ) : (
-                      <LiaEyeSlashSolid className="text-xl opacity-80" />
-                    )}
-                  </div>
+                    className="input w-[300px] relative "
+                    required
+                  />
+
+                  <hr />
                 </div>
+                <div
+                  onClick={handelShowPass}
+                  type="submit"
+                  name="password"
+                  className=" mt-10 ml-[260px] absolute  "
+                >
+                  {!showPass ? (
+                    <LiaEyeSlashSolid className="text-xl opacity-80" />
+                  ) : (
+                    <LiaEyeSolid className="text-xl opacity-80" />
+                  )}
+                </div>
+              </div>
               </div>
 
               <div className="flex items-center justify-around">
                 <div className="form-control mt-6">
-                  <button className="btn btn-outline btn-primary mt-[21px]">
-                    Create Account?
+                  <button className="btn  bg-rose-300  w-32">
+                    Register
                   </button>
                 </div>
               </div>

@@ -35,7 +35,7 @@ const Login = () => {
       setLoading(isLoading);
       
       notify();
-      //    navigate(location.state)
+         navigate(location.state)
     })
     
     
@@ -47,7 +47,7 @@ const Login = () => {
     gitHubLogin().then((res) => {
       setLoading(isLoading);
       notify();
-      //   navigate(location.state)
+        navigate(location.state)
     });
   };
 
@@ -76,7 +76,7 @@ const Login = () => {
       .then((res) => {
         setLoading(isLoading);
         notify();
-        // navigate(location.state)
+        navigate(location.state)
       })
       .catch((error) => {
         setLoading(isLoading);
@@ -97,7 +97,7 @@ const Login = () => {
         ""
       )} 
      </div>
-      <div className="hero min-h-screen">
+      <div className="hero min-h-screen ">
         <div className="hero-content flex-col ">
           <div className="text-center   items-center rounded-lg  justify-center p-20  flex flex-col  lg:text-left  opacity-85">
            <div className="text-center hover:shadow-md absolute p-8 rounded-md">
@@ -175,13 +175,9 @@ const Login = () => {
 
               <div className="flex items-center justify-around">
                 <div className="form-control mt-6">
-                  <button className="btn btn-primary w-auto">Login</button>
+                  <button className="btn  w-36 bg-rose-300">Login</button>
                 </div>
-                <div>
-                  <button className="btn btn-outline btn-primary mt-[21px]">
-                    <NavLink to="/create-accound">Create Account?</NavLink>
-                  </button>
-                </div>
+                
               </div>
             </form>
             <div className="text-center">
@@ -192,7 +188,7 @@ const Login = () => {
                 <FcGoogle />
               </button>
             </div>
-            <div className="text-center mt-5">
+            <div className="text-center mt-5 pb-16">
               <button
                 onClick={handelGithubLogin}
                 className="btn btn-wide bg-red-300 text-3xl"
