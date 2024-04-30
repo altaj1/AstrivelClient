@@ -1,12 +1,13 @@
 import { Link } from "react-router-dom";
-
+import { Slide } from "react-awesome-reveal";
 
 const HomeCard = ({spot}) => {
     const {countryName, spotName, photo, cost, visitors, description, seasonality,
         location, travelTime, _id} =spot;
     return (
-        <div className="card card-compact lg:w-96  shadow-xl">
-        <figure>
+       <Slide >
+         <div className="card card-compact lg:w-96  shadow-xl">
+        <figure className="">
           <img className="lg:w-full lg:h-72"
             src={photo}
             alt="Shoes"
@@ -31,6 +32,7 @@ const HomeCard = ({spot}) => {
           </div>
         </div>
       </div>
+       </Slide>
     );
 };
 

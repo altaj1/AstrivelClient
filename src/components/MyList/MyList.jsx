@@ -5,10 +5,10 @@ import { Typewriter } from "react-simple-typewriter";
 
 const MyList = () => {
   const [spots, setSpots] = useState([]);
-  const { user } = useContext(AuthContext);
-
+  const { user} = useContext(AuthContext);
+ 
   useEffect(() => {
-    fetch(`http://localhost:4000/my-list/${user?.email}`)
+    fetch(`https://astrovel-server.vercel.app/my-list/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setSpots(data);
@@ -54,6 +54,7 @@ const MyList = () => {
        
       </table>
     </div>
+    
    </div>
   );
 };

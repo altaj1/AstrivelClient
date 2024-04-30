@@ -2,6 +2,8 @@ import { useLoaderData } from "react-router-dom";
 import TouristCard from "../TouristCard/TouristCard";
 import { useState } from "react";
 import { Typewriter } from "react-simple-typewriter";
+import 'react-tooltip/dist/react-tooltip.css';
+import { Tooltip } from 'react-tooltip'
 
 
 const AllTorisetSpot = () => {
@@ -29,7 +31,11 @@ const AllTorisetSpot = () => {
                   words={["  All Tourist Spots Information"]}
                 />
            </h1>
-        <button onClick={handeleSort} className="btn font-bold">Sort Average Cost</button>
+           <button id="clickable"  onClick={handeleSort} className="btn  font-bold" >Sort Average Cost</button>
+           <Tooltip anchorSelect="#clickable" clickable>
+  <button onClick={handeleSort}>Ok!</button>
+</Tooltip>
+       
         </div>
          <div className="grid text-start lg:grid-cols-3 md:grid-cols-2 mx-auto pt-10 w-[70%] justify-around lg:pl-20 gap-5">
             {

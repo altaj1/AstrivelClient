@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 
+import { Slide } from "react-awesome-reveal";
 import { Link } from "react-router-dom";
 
 
@@ -8,9 +9,10 @@ const TouristCard = ({spot}) => {
     const {countryName, spotName, photo, cost, visitors, description, seasonality,
         location, travelTime, _id} =spot;
   return (
-    <div className="card card-compact lg:w-96  shadow-xl">
+    <Slide>
+      <div className="card card-compact lg:w-96  shadow-xl">
       <figure>
-        <img className="lg:w-full lg:h-72"
+        <img className="w-full h-72"
           src={photo}
           alt="Shoes"
         />
@@ -35,6 +37,8 @@ const TouristCard = ({spot}) => {
       </div>
     </div>
   );
+    </Slide>
+  )
 };
 
 export default TouristCard;

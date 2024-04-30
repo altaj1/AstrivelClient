@@ -7,7 +7,7 @@ import { useLoaderData, useParams } from "react-router-dom";
 
 const UpdateSpot = () => {
 
-
+  
     const spot = useLoaderData();
     console.log(spot)
 
@@ -23,9 +23,9 @@ const UpdateSpot = () => {
     const {countryName, spotName, photo, cost, visitors, description, seasonality,
       location, travelTime, _id} =spot;
 
-    const handelSubmitt = (e)=>{
+    const handelSubmitt = (e, _id)=>{
         e.preventDefault()
-        
+        console.log("ouch")
         const form = e.target;
         const countryName = form.countryName.value;
         
@@ -48,8 +48,8 @@ const UpdateSpot = () => {
         const addTouristsSpot = {countryName, spotName, photo, cost, visitors, description, seasonality,
             location, travelTime, displayName, email,  photoURL}
             // console.log(addTouristsSpot)
-            fetch(`http://localhost:4000/update/${_id}`,{
-                method: 'Put',
+            fetch(`https://astrovel-server.vercel.app/update/${_id}`,{
+                method: 'PUT',
                 headers:{'Content-Type': 'application/json'},
                 body:JSON.stringify(addTouristsSpot)
             })
@@ -84,7 +84,9 @@ const UpdateSpot = () => {
         </div>
       <section className="p-6 dark:bg-gray-100 dark:text-gray-900">
         <form
-          onSubmit={handelSubmitt}
+          onSubmit={(e)=>{
+            
+            handelSubmitt( e,_id)}}
           className="container flex flex-col mx-auto space-y-12"
         >
           <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm dark:bg-gray-50">
@@ -125,8 +127,7 @@ const UpdateSpot = () => {
                 </label>
                 <input
                 defaultValue={spotName}
-                disabled
-                readOnly
+                
                   name="spotName"
                   id="lastname"
                   type="text"
@@ -142,8 +143,7 @@ const UpdateSpot = () => {
                 <input
                   name="photo"
                   defaultValue={photo}
-                disabled
-                readOnly
+                
                   type="url"
                   placeholder="     Photo ( Use Photo URL)"
                   className="w-full rounded-md text-black  focus:outline-none"
@@ -157,8 +157,7 @@ const UpdateSpot = () => {
                 <input
                   name="cost"
                   defaultValue={cost}
-                disabled
-                readOnly
+                
                   type="number"
                   placeholder="    Average Cost"
                   className="w-full rounded-md text-black  focus:outline-none"
@@ -172,8 +171,7 @@ const UpdateSpot = () => {
                 <input
                   name="visitors"
                   defaultValue={visitors}
-                disabled
-                readOnly
+               
                   type="text"
                   placeholder="     Tota Visitors Per Year"
                   className="w-full rounded-md text-black  focus:outline-none"
@@ -187,8 +185,7 @@ const UpdateSpot = () => {
                 <input
                   name="description"
                   defaultValue={description}
-                disabled
-                readOnly
+               
                   type="text"
                   placeholder="    Description"
                   className="w-full rounded-md  text-black focus:outline-none"
@@ -205,8 +202,7 @@ const UpdateSpot = () => {
                 <input
                  name="seasonality"
                  defaultValue={seasonality}
-                disabled
-                readOnly
+                
                   type="text"
                   placeholder="    Seasonality "
                   className="w-full rounded-md text-black   focus:outline-none"
@@ -219,8 +215,7 @@ const UpdateSpot = () => {
                 </label>
                 <input
                 defaultValue={location}
-                disabled
-                readOnly
+                
                   name="location"
                   id=""
                   type="text"
@@ -235,8 +230,7 @@ const UpdateSpot = () => {
                 </label>
                 <input
                 defaultValue={travelTime}
-                disabled
-                readOnly
+                
                  name="travel_time"
                   type="text"
                   placeholder="    Travel Time"

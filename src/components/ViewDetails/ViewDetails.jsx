@@ -21,10 +21,13 @@ const ViewDetails = () => {
 			</h1>
 			<p className="mt-6 mb-8 text-lg sm:mb-12">{description}
 			</p>
-			<div className=" font-medium flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
+			<div className=" font-medium flex-col space-y-7 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
 				<p className="text-3xl font-bold">Countri Name: {countryName}</p>
 				<p>Location: {location}</p>
 				<p>Avareg Cont: {cost}</p>
+				<p>Visitors: {visitors}</p>
+				<p>Seasonality: {seasonality}</p>
+				<p>Travel Time:{travelTime}</p>
 
 			</div>
 		</div>

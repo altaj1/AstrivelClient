@@ -3,6 +3,7 @@ import Navbar from "../Navbar/Navbar";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useState } from "react";
+import Footer from "../Footer/Footer";
 
 const MainLayout = () => {
     const [darkMode, setDarkMode] = useState(false);
@@ -17,6 +18,9 @@ const MainLayout = () => {
             // style={{ minHeight: "calc(100vh - 370px)" }}
             className='min-h-[calc(100vh-124px)] pt-20 lg:pt-0'>
             <Outlet></Outlet>
+            </div>
+            <div>
+                <Footer></Footer>
             </div>
            </div>
             <ToastContainer />

@@ -166,9 +166,9 @@ const Login = () => {
                   className=" mt-10 ml-[260px] absolute  "
                 >
                   {!showPass ? (
-                    <LiaEyeSlashSolid className="text-xl opacity-80" />
+                    <LiaEyeSlashSolid className="text-xl text-slate-700 opacity-80" />
                   ) : (
-                    <LiaEyeSolid className="text-xl opacity-80" />
+                    <LiaEyeSolid className="text-xl text-slate-700 opacity-80" />
                   )}
                 </div>
               </div>

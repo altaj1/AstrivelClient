@@ -62,7 +62,7 @@ const AddTouristsSpot = () => {
       photoURL,
     };
     // console.log(addTouristsSpot)
-    fetch(`http://localhost:4000/add-tourists`, {
+    fetch(`https://astrovel-server.vercel.app/add-tourists`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(addTouristsSpot),

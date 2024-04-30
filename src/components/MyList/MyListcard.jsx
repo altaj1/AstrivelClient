@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 
 
 import { Link } from "react-router-dom";
@@ -7,9 +8,9 @@ import Swal from "sweetalert2";
 const MyListcard = ({spot, idx, spots, setSpots }) => {
     
     const {countryName, spotName, photo, cost, visitors, description, seasonality,
-        location, travelTime, _id} =spot || {};
+        location, travelTime, _id} =spot;
 
-        console.log(countryName, " this is countri name")
+        
     const handeleDelete = (_id)=>{
         Swal.fire({
             title: 'Are you sure?',
@@ -23,11 +24,14 @@ const MyListcard = ({spot, idx, spots, setSpots }) => {
         .then(result =>{
             if(result.isConfirmed)
             {
-                fetch(`http://localhost:4000/delete/${_id}`,{
+                console.log(result)
+                console.log(_id)
+                fetch(`https://astrovel-server.vercel.app/delete/${_id}`,{
                     method:'DELETE'
                 })
                 .then(res =>res.json())
                 .then(data =>{
+                    console.log(data)
                     if (data.deletedCount > 0) {
                         Swal.fire(
                             'Deleted!',

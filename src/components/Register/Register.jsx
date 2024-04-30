@@ -72,9 +72,9 @@ const Register = () => {
       <Helmet>
         <title>Register</title>
       </Helmet>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center h-52 items-center rounded-lg shadow-lg justify-center p-20 hover:bg-purple-500 flex flex-col  lg:text-left bg-purple-600 text-white opacity-85">
+      <div className="hero min-h-screen ">
+        <div className="hero-content flex-col ">
+          <div className="text-center absolute h-52 items-center rounded-lg  justify-center p-20 hover:shadow-lg flex flex-col  lg:text-left   opacity-85">
             <h1 className="font-bold  text-2xl animate__animated animate__backInDown">
               
               <Typewriter
@@ -166,7 +166,7 @@ const Register = () => {
                   className=" mt-10 ml-[260px] absolute  "
                 >
                   {!showPass ? (
-                    <LiaEyeSlashSolid className="text-xl opacity-80" />
+                    <LiaEyeSlashSolid className="text-xl text-slate-700 opacity-80" />
                   ) : (
                     <LiaEyeSolid className="text-xl opacity-80" />
                   )}

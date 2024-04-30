@@ -5,7 +5,7 @@ import CountriDeatilCard from "../CountriDeatileCard/CountriDeatilCard";
 const CountriDeatile = () => {
     const loaderData = useLoaderData()
     return (
-        <div className="text-center mt-12">
+        <div className="text-center pt-12">
              <h1 className="text-4xl font-bold">Spasafice Country Information</h1>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 mx-auto pt-10 w-[70%] justify-around lg:pl-20 gap-5 text-start">
             {

@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
 import { Fade, Slide } from "react-awesome-reveal";
+import { Tooltip } from "react-tooltip";
 
 const CountryCard = ({countri}) => {
     const {countryName, description, flag} = countri;
     return (
       
-      <Slide>
-      <Link to={`/countri-deatiel/${countryName}`}>
+     <div>
+       <Slide>
+      <Link 
+      to={`/countri-deatiel/${countryName}`}>
         <div className="card card-compact lg:w-96  shadow-xl">
         <figure>
-          <img className="lg:w-full lg:h-72"
+          <img className="w-full h-72"
             src={flag}
             alt="Shoes"
           />
@@ -32,6 +35,10 @@ const CountryCard = ({countri}) => {
       </div>
       </Link>
     </Slide>
+    
+    
+     </div>
+    
     );
 };
 

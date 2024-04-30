@@ -1,33 +1,38 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "../Banner/Banner";
-
 import HomeCard from "./HomeCard/HomeCard";
-import { useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import CountryCard from "./CountryCard/CountryCard";
 import { Typewriter } from "react-simple-typewriter";
 import CustomersSay from "../CustomersSay/CustomersSay";
 import WhyTravelWithUs from "./WhyTravelWithUS/WhyTravelWithUs";
 
+
 const Home = () => {
     const [countries, setCountries] = useState([])
+    const [loading, setLoading] = useState(true)
     const spots = useLoaderData();
    
     const first6Spots = spots.slice(0,6);
-    
+   
     useEffect(()=>{
-        fetch('http://localhost:4000/all-country')
+        fetch('https://astrovel-server.vercel.app/all-country')
         .then(res=>res.json())
         .then(data =>{
+            // setLoading(!loading)
             setCountries(data)
+            
         })
     },[])
+
+    if(loading){
+         <div className="text-center"> <span className="loading loading-spinner loading-lg"></span></div>
+    }
+    
     console.log(countries)
     return (
         <div>
         <Banner></Banner>
-
-
-
         {/* Home Card */}
         <div className="text-center mt-12">
             <h1 className="text-4xl font-bold">
@@ -68,6 +73,15 @@ const Home = () => {
            {
             <WhyTravelWithUs></WhyTravelWithUs>
            }
+           </div>
+
+           <div className="pt-11 "> 
+            <div>
+                <h1 className="text-6xl pb-16">Customer Say About Us</h1>
+            </div>
+            {
+                <CustomersSay/>
+            }
            </div>
         </div>
 

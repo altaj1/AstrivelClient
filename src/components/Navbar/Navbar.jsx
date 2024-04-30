@@ -1,13 +1,15 @@
+/* eslint-disable react/prop-types */
 import { Link, NavLink } from "react-router-dom";
 import { TbLayoutNavbarExpand } from "react-icons/tb";
-import { useContext, useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Authprovider/AuthProvider";
 import { CgProfile } from "react-icons/cg";
+
 import { MdDarkMode } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
 const Navbar = ({ setDarkMode, darkMode }) => {
   const { user, userLogOut, setUser } = useContext(AuthContext);
-  // console.log(name);
+
   const listItems = (
     <div className=" lg:flex  items-center gap-7">
       <div className="flex  md:flex-row md:gap-6 flex-col lg:flex-row lg:gap-7 lg:space-y-0 space-y-4 ">
@@ -97,12 +99,15 @@ const Navbar = ({ setDarkMode, darkMode }) => {
         <div className="dropdown dropdown-hover drop-shadow-none">
           <div tabIndex={0} role="button" className=" m-1">
           <Link >
-            
-            <img
-              className="h-14 rounded-full"
-              src={user ? user.photoURL : <CgProfile className="text-5xl" />}
-              alt=""
-            />
+            {
+
+             user ? <img
+             className="h-14 rounded-full"
+             src={user?.photoURL ? user.photoURL : "https://i.ibb.co/fQZMVfT/profile-removebg-preview.png" }
+             alt=""
+           />:""
+            }
+           
           </Link>
           </div>
           <ul
@@ -113,7 +118,7 @@ const Navbar = ({ setDarkMode, darkMode }) => {
               <a>{user?.displayName}</a>
             </li>
             <li>
-              <a><button  onClick={() => userLogOut()} className="btn  w-full">
+              <a><button  onClick={() => userLogOut()} className=" w-full">
             Logout
           </button></a>
             </li>
@@ -143,6 +148,7 @@ const Navbar = ({ setDarkMode, darkMode }) => {
       <div className=" m-0 ">
             <button
               onClick={() => setDarkMode(!darkMode)}
+            
               className=" p-1 mr-3 flex items-center text-4xl"
             >
               {
