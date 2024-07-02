@@ -1,9 +1,17 @@
-# B9 A10 Type-01 Requirements
+
 # Astrovel
 Live Site URL: 
 - [Add Live Site URL Here](https://astro-home-395ff.web.app/)
 - [GitHub repository Server-site URL](https://github.com/programming-hero-web-course-4/b9a10-server-side-altaj1)
+## Getting Started
 
+### Prerequisites
+- Git
+- Node.js
+- MongoDB
+- Firebase account
+- This package with credentials must be added to this project
+  
 ## Features:
 - Unique Design: Our website offers a unique design tailored specifically for the Tourist industry, ensuring a distinct user experience.
 - Responsive Layout: Tourist is fully responsive, providing seamless usability across various devices including desktops, tablets, and mobile phones.
