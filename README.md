@@ -2,9 +2,6 @@
 # Astrovel
 Live Site URL: 
 - [Add Live Site URL Here](https://astro-home-395ff.web.app/)
-- [Versel Server URL](https://astrovel-server.vercel.app/)
-
-- [GitHub repository Client-site URL](https://github.com/programming-hero-web-course-4/B9A10-client-side-altaj1)
 - [GitHub repository Server-site URL](https://github.com/programming-hero-web-course-4/b9a10-server-side-altaj1)
 
 ## Features:
@@ -37,7 +34,7 @@ Interactive Login & Registration: Users can register and login using email/passw
 
 - [react-tostify](https://www.npmjs.com/package/react-toastify)
 
-- Clone the repository: git clone [https://github.com/ProgrammingHero1/B9--Assaignment-10]
+
 
 Install dependencies: npm install
 Configure Firebase environment variables.
