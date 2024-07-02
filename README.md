@@ -6,8 +6,6 @@ Live Site URL:
 ## Getting Started
 
 ###  If you have locally run this prerequisite
-- Git
-- Node.js
 - MongoDB
 - Firebase account
 - This package with credentials must be added to this project
