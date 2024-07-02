@@ -5,7 +5,7 @@ Live Site URL:
 - [GitHub repository Server-site URL](https://github.com/programming-hero-web-course-4/b9a10-server-side-altaj1)
 ## Getting Started
 
-### Prerequisites
+###  If you have locally run this prerequisite
 - Git
 - Node.js
 - MongoDB
@@ -17,7 +17,7 @@ Live Site URL:
 - Responsive Layout: Tourist is fully responsive, providing seamless usability across various devices including desktops, tablets, and mobile phones.
 Firebase Integration: We utilize Firebase authentication for secure login and registration processes, ensuring user data privacy.
 - Dynamic Navbar: The navbar dynamically adjusts based on user authentication status, displaying user-specific options like profile management and logout.
-Interactive Login & Registration: Users can register and login using email/password or third-party providers like Google, GitHub, .
+Interactive Login & Registration: Users can register and login using email/password or third-party providers like Google, and GitHub,
 
 - Protected Routes: Certain routes are protected, requiring users to login to access features like viewing detailed property information.
 - Profile Management: Authenticated users can view and update their profile information, including name and profile picture.
